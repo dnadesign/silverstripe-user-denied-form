@@ -1,0 +1,23 @@
+{
+    "name": "dnadesign/userforms-user-denied-form",
+    "description": "Prevent too many submissions being created by a silverstripe user defined form.",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "userforms",
+        "protection",
+        "submission",
+        "limit"
+    ],
+    "authors": [
+        {
+            "name": "DNA Designed Communications Limited",
+            "email": "dev@dna.co.nz"
+        }
+    ],
+    "require": {
+        "silverstripe/vendor-plugin": "^1",
+        "silverstripe/framework": "^4",
+        "silverstripe/userforms": "^5"
+    }
+}
