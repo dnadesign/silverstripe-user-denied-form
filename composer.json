@@ -1,5 +1,5 @@
 {
-    "name": "dnadesign/userforms-user-denied-form",
+    "name": "dnadesign/silverstripe-user-denied-form",
     "description": "Prevent too many submissions being created by a silverstripe user defined form.",
     "type": "silverstripe-vendormodule",
     "keywords": [
