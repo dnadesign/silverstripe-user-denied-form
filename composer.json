@@ -18,6 +18,7 @@
     "require": {
         "silverstripe/vendor-plugin": "^1",
         "silverstripe/framework": "^4",
-        "silverstripe/userforms": "^5"
+        "silverstripe/userforms": "^5",
+        "unclecheese/display-logic": "^2"
     }
 }

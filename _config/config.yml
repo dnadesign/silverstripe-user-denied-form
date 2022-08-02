@@ -1,0 +1,15 @@
+---
+Name: user-denied-form
+---
+SilverStripe\UserForms\Form\UserForm:
+  extensions:
+    security: DNADesign\UserDeniedForm\Extensions\UserFormSecurityExtension
+SilverStripe\UserForms\Model\UserDefinedForm:
+  extensions:
+    security: DNADesign\UserDeniedForm\Extensions\UserDefinedFormSecurityExtension
+SilverStripe\UserForms\Model\Submission\SubmittedForm:
+  extensions:
+    security: DNADesign\UserDeniedForm\Extensions\SubmittedFormSecurityExtension
+SilverStripe\UserForms\Control\UserDefinedFormController:
+  extensions:
+    security: DNADesign\UserDeniedForm\Extensions\UserDefinedFormControllerSecurityExtension
