@@ -27,7 +27,7 @@ class UserDefinedFormSecurityExtension extends DataExtension
 {
     private static $submission_rate_limit_enabled = true;
 
-    private static $reset_rate_limit_automatically = false;
+    private static $reset_rate_limit_automatically = true;
 
     private static $submission_rate_frequencies = [
         '60' => 'per minute',
