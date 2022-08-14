@@ -2,7 +2,6 @@
 
 namespace DNADesign\UserDeniedForm\Extensions;
 
-use DateTime;
 use Psr\Log\LoggerInterface;
 use SilverStripe\Control\Email\Email;
 use SilverStripe\Core\Injector\Injector;

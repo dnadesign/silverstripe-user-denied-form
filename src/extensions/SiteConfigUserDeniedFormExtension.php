@@ -3,8 +3,6 @@
 namespace DNADesign\UserDeniedForm\Extensions;
 
 use DNADesign\Elemental\TopPage\DataExtension;
-use SilverStripe\Core\ClassInfo;
-use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldGroup;
