@@ -3,8 +3,8 @@ Prevent too many submissions being created by a Silverstripe user defined form.
 
 ## Requirements
 
-* Silverstripe CMS ^4
-* Silverstripe Userforms ^5
+* Silverstripe CMS ^5
+* Silverstripe Userforms ^6
 
 ## Installation
 
