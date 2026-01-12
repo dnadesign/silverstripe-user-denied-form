@@ -4,6 +4,7 @@ namespace DNADesign\UserDeniedForm\Extensions;
 
 use Psr\Log\LoggerInterface;
 use SilverStripe\Control\Email\Email;
+use SilverStripe\Core\Extension;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DatetimeField;
@@ -15,14 +16,13 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\DB;
 use SilverStripe\ORM\FieldType\DBDatetime;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\UserForms\Model\Submission\SubmittedForm;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 
-class UserDefinedFormSecurityExtension extends DataExtension
+class UserDefinedFormSecurityExtension extends Extension
 {
     private static $submission_rate_limit_enabled = true;
 
@@ -47,12 +47,20 @@ class UserDefinedFormSecurityExtension extends DataExtension
         'RateLimitEnabled' => true
     ];
 
-    public function updateCMSFields(FieldList $fields)
+    public function updateCMSFields(FieldList $fields): void
     {
         if (!$this->classHasRateLimitingEnabled()) {
             $fields->removeByName(array_keys($this->db));
             return;
         }
+
+        // Remove auto-scaffolded fields to prevent duplicates
+        $fields->removeByName([
+            'RateCount',
+            'RateFrequency',
+            'DisabledFormMessage',
+            'DisabledFormNotificationEmail'
+        ]);
 
         $settingsOptions = $this->owner->dbObject('RateLimitSettings')->enumValues();
         $settingsOptions = [
@@ -69,8 +77,8 @@ class UserDefinedFormSecurityExtension extends DataExtension
                     NumericField::create('RateCount', 'Submissions'),
                     DropdownField::create('RateFrequency', '', $this->owner->config()->get('submission_rate_frequencies')),
                 ),
-                HTMLEditorField::create('DisabledFormMessage'),
-                EmailField::create('DisabledFormNotificationEmail')
+                HTMLEditorField::create('DisabledFormMessage', 'Disabled Form Message'),
+                EmailField::create('DisabledFormNotificationEmail', 'Notification Email')
             )
         ]);
 
