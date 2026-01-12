@@ -1,24 +1,23 @@
 {
-    "name": "dnadesign/silverstripe-user-denied-form",
-    "description": "Prevent too many submissions being created by a silverstripe user defined form.",
-    "type": "silverstripe-vendormodule",
-    "keywords": [
-        "silverstripe",
-        "userforms",
-        "protection",
-        "submission",
-        "limit"
-    ],
-    "authors": [
-        {
-            "name": "DNA Designed Communications Limited",
-            "email": "dev@dna.co.nz"
-        }
-    ],
-    "require": {
-        "silverstripe/vendor-plugin": "^2",
-        "silverstripe/framework": "^5",
-        "silverstripe/userforms": "^6",
-        "unclecheese/display-logic": "^3"
+  "name": "dnadesign/silverstripe-user-denied-form",
+  "description": "Prevent too many submissions being created by a silverstripe user defined form.",
+  "type": "silverstripe-vendormodule",
+  "keywords": [
+    "silverstripe",
+    "userforms",
+    "protection",
+    "submission",
+    "limit"
+  ],
+  "authors": [
+    {
+      "name": "DNA Designed Communications Limited",
+      "email": "dev@dna.co.nz"
     }
+  ],
+  "require": {
+    "silverstripe/framework": "^6",
+    "silverstripe/userforms": "^7",
+    "unclecheese/display-logic": "^4"
+  }
 }

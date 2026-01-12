@@ -2,7 +2,6 @@
 
 namespace DNADesign\UserDeniedForm\Extensions;
 
-use DNADesign\Elemental\TopPage\DataExtension;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldGroup;
@@ -10,9 +9,10 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\NumericField;
+use SilverStripe\Core\Extension;
 use SilverStripe\UserForms\Model\UserDefinedForm;
 
-class SiteConfigUserDeniedFormExtension extends DataExtension
+class SiteConfigUserDeniedFormExtension extends Extension
 {
     private static $db = [
         'DefaultRateCount' => 'Int',

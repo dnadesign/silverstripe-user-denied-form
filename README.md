@@ -1,18 +1,20 @@
 # silverstripe-user-denied-form
+
 Prevent too many submissions being created by a Silverstripe user defined form.
 
 ## Requirements
 
-* Silverstripe CMS ^5
-* Silverstripe Userforms ^6
+- Silverstripe CMS ^6
+- Silverstripe Userforms ^7
 
 ## Installation
 
 ```
-composer require dnadesign/silverstripe-user-denied-form ^0.1
+composer require dnadesign/silverstripe-user-denied-form ^0.2
 ```
 
 ## Configuration
+
 By default, any new user defined form will have rate limiting enabled.
 Default parameters can be set in `Settings > Security`.
 
@@ -44,6 +46,6 @@ In which case, in order to reset the form manually, edit the page, and in `Secur
 ![Reset Form](./docs/images/form-manual-reset.png "Reset Form")
 
 ## To do:
+
 - Add an action provider to reset the form rather than having to erase the date?
 - Allow multiple email address to be notified?
-
